@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#content {
+    max-width: 600px;
+	 margin: top;
+    margin: auto;
+    left: 1%;
+    right: 1%;
+    position: absolute;
+    text-align: center;
+}
+}
+</style>
+</head>
+<body>
+
+
+<div id="content" style="background:lightblue">
+<p><h1><b>Your complain has been registered</h1></b></p>
+</div>
+<script>
+$(function() {
+    $(window).on('resize', function resize()  {
+        $(window).off('resize', resize);
+        setTimeout(function () {
+            var content = $('#content');
+            var top = (window.innerHeight - content.height()) / 2;
+            content.css('top', Math.max(0, top) + 'px');
+            $(window).on('resize', resize);
+        }, 50);
+    }).resize();
+});
+</script>
+
+</body>
+</html>
